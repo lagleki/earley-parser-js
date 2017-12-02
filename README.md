@@ -1,3 +1,5 @@
+https://jsfiddle.net/yzcnbaku/8/
+
 # earley-parser-js
 Tiny JavaScript implementation of context-free languages parser - [Earley parser](https://en.wikipedia.org/wiki/Earley_parser)
 
@@ -18,7 +20,7 @@ Tiny JavaScript implementation of context-free languages parser - [Earley parser
 
 The Earley parser is an algorithm for parsing strings that belong to a given [context-free language](https://en.wikipedia.org/wiki/Context-free_language) (the algorithm, named after its inventor, [Jay Earley](https://en.wikipedia.org/wiki/Jay_Earley)).
 
-This algorithm is appealing because it can parse all context-free languages, unlike [LR parsers](https://en.wikipedia.org/wiki/LR_parser) and [LL parsers](https://en.wikipedia.org/wiki/LL_parser), which are more typically used in compilers but which can only handle restricted classes of languages. 
+This algorithm is appealing because it can parse all context-free languages, unlike [LR parsers](https://en.wikipedia.org/wiki/LR_parser) and [LL parsers](https://en.wikipedia.org/wiki/LL_parser), which are more typically used in compilers but which can only handle restricted classes of languages.
 
 Complexity of Earley parsing algorithm (in terms of *n* - the length of the parsed string):
 - *O(n<sup>3</sup>)* - cubic time in the general case
@@ -79,7 +81,7 @@ var grammar = new tinynlp.Grammar([
      'S -> S add_sub M | M | num',
      'M -> M mul_div T | T | num',
      'T -> num',
-     
+
      // Define terminal symbols
      'num -> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0',
      'add_sub -> + | -',
@@ -112,19 +114,19 @@ var grammar = new tinynlp.Grammar([
     'S -> S add_sub M | M | num',
     'M -> M mul_div T | T | num',
     'T -> num',
-]); 
+]);
 
 // Define function, which will classify tokens into terminal types
-grammar.terminalSymbols = function( token ) { 
-    // Actually, this method might be customized 
+grammar.terminalSymbols = function( token ) {
+    // Actually, this method might be customized
     // to use some more sophisticated classification mechanisms
-    
+
     if( '+' === token || '-' === token ) return ['add_sub'];
     if( '*' === token || '/' === token ) return ['mul_div'];
     if( token.match(/^\d+$/) ) return ['num'];
-    // It is also possible that classifier returns 
+    // It is also possible that classifier returns
     // more than one terminal symbol, e.g.: ['term1', 'term2']
-    
+
     // Otherwise:
     throw new Error("Can't recognize token: " + token);
 }   
@@ -153,7 +155,7 @@ function toNestedList(tree) {
    if (!tree.subtrees || tree.subtrees.length == 0) {
        return '<li>' + tree.root + '</li>';
    }   
-   var builder = []; 
+   var builder = [];
    builder.push('<li>');
    builder.push(tree.root);
    builder.push('<ul>')
@@ -163,7 +165,7 @@ function toNestedList(tree) {
    builder.push('</ul>')
    builder.push('</li>')
    return builder.join('');
-} 
+}
 ```
 Example of usage:
 ```javascript
