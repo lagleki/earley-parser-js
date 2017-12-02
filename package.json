@@ -1,0 +1,20 @@
+{
+  "name": "erlitufa",
+  "version": "1.0.0",
+  "description": "parser",
+  "main": "earley-oop.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git add . ; git commit -m 'commit' ; git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lagleki/earley-parser-js.git"
+  },
+  "author": "lojban <gleki.is.my.name@gmail.com> (http://jbotcan.org)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lagleki/earley-parser-js/issues"
+  },
+  "homepage": "https://github.com/lagleki/earley-parser-js#readme"
+}
